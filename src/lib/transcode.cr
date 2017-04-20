@@ -14,7 +14,7 @@ module Transcode
   #
   #    chunker(3) "123456789" # => [789, 456, 123]
   #
-  def chunker(size) : String -> Array(Int32)
+  def chunker(size : Number) : String -> Array(Int32)
     ->(numberString : String) do
       numberString.reverse
                   .scan(/\d{1,#{size}}/)
