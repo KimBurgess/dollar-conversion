@@ -1,4 +1,4 @@
-Data manipulation / coding challenge that a friend was given for an interview question. Thought it would be fun to attmept to implement it in a new language ([Crystal](https://crystal-lang.org/)) to give it a spin.
+Data manipulation / coding challenge that a friend was given for an interview question. Thought it would be fun to attmept to implement and a good excuse to take a new language ([Crystal](https://crystal-lang.org/)) for a spin.
 
 Original brief and requirements:
 
