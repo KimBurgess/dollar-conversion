@@ -2,7 +2,7 @@ require "spec"
 require "../src/lib/transcode.cr"
 
 describe Transcode do
-  describe ".dollar" do
+  describe ".dollars" do
     it "works for well formed values" do
       Transcode.dollars("1.11").should eq "one dollar and eleven cents"
       Transcode.dollars("1.01").should eq "one dollar and one cent"
@@ -37,6 +37,18 @@ describe Transcode do
 
     it "works for large values" do
       Transcode.dollars("1000456.13").should eq "one million four hundred and fifty-six dollars and thirteen cents"
+    end
+  end
+
+  describe ".chunker" do
+    it "chunks values that align with chunk size" do
+      hundredsChunker = Transcode.chunker(3)
+      hundredsChunker.call("123456789").should eq [789, 456, 123]
+    end
+
+    it "chunks values that do not align with chunk size" do
+      hundredsChunker = Transcode.chunker(3)
+      hundredsChunker.call("12345678").should eq [678, 345, 12]
     end
   end
 end
