@@ -1,0 +1,17 @@
+name: dollars
+version: 0.1.0
+
+authors:
+  - Kim Burgess <kim@acaprojects.com>
+
+targets:
+  dollars:
+    main: src/dollars.cr
+
+dependencies:
+  cli:
+    github: mosop/cli
+
+crystal: 0.20.5
+
+license: MIT
