@@ -39,7 +39,7 @@ module Wordify
     raise ArgumentError.new if amount < 0 || amount >= 1000
 
     if amount < 20
-      words = NUMS[amount]
+      NUMS[amount]
     elsif amount < 100
       tens, units = amount.divmod 10
       if units > 0
