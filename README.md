@@ -17,31 +17,31 @@ Original brief and requirements:
 > Some other example input and output:
 >
 >    dollars "0"
->    # => "zero dollars and zero cents"
+>    => "zero dollars and zero cents"
 >
 >    dollars "1"
->    # => "one dollar and zero cents"
+>    => "one dollar and zero cents"
 >
 >    dollars "0.1"
->    #=> "zero dollars and ten cents"
+>    => "zero dollars and ten cents"
 >
 >    dollars "1."
->    # => "one dollar and zero cents"
+>    => "one dollar and zero cents"
 >
 >    dollars "0."
->    # => "zero dollars and zero cents"
+>    => "zero dollars and zero cents"
 >
 >    dollars ".34"
->    # => "zero dollars and thirty-four cents"
+>    => "zero dollars and thirty-four cents"
 >
 >    dollars "0.3456789"
->    # => "zero dollars and thirty-four cents"
+>    => "zero dollars and thirty-four cents"
 >
 >    dollars "1.0"
->    # => "one dollar and zero cents"
+>    => "one dollar and zero cents"
 >
 >    dollars "1.01"
->    # => "one dollar and one cent"
+>    => "one dollar and one cent"
 >
 >    dollars "1000456.13"
->    # => "one million four hundred and fifty-six dollars and thirteen cents"
+>    => "one million four hundred and fifty-six dollars and thirteen cents"
