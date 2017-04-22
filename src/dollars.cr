@@ -1,7 +1,7 @@
 require "cli"
-require "./lib/transcode"
+require "./lib/wordify"
 
-class Dollars < Cli::Command
+class App < Cli::Command
   class Help
     header "Converts numeric dollar amounts into words."
   end
@@ -12,8 +12,31 @@ class Dollars < Cli::Command
   end
 
   def run
-    puts Transcode.dollars args.amount
+    puts dollars args.amount
   end
 end
 
-Dollars.run ARGV
+# Converts a string containing a numeric representation of a dollar amount
+# into it's English equivalent.
+def dollars(amountAsNumeric : String) : String
+  # note: examples included in project spec showed cents being rounded down
+  # rather than rounded to the closest whole cent, normalisation follows this.
+  normalise = ->(x : Float64) { ((x < 1) ? (x * 100).floor : x).to_i }
+
+  begin
+    amount = amountAsNumeric.to_f
+  rescue
+    amount = 0.0
+  end
+
+  dollars, cents = amount.divmod(1)
+                         .map(&normalise)
+                         .map { |x| Wordify.numberToWords(x).as String }
+
+  dollars = Wordify.append_unit dollars, "dollar"
+  cents = Wordify.append_unit cents, "cent"
+
+  "#{dollars} and #{cents}"
+end
+
+App.run ARGV
