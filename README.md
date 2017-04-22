@@ -2,6 +2,8 @@ Data manipulation / coding challenge that a friend was given for an interview
 question. Thought it would be fun to attempt to implement and a good excuse to
 take a new language ([Crystal](https://crystal-lang.org/)) for a spin.
 
+[![Build Status](https://travis-ci.org/KimBurgess/dollar-conversion.svg?branch=master)](https://travis-ci.org/KimBurgess/dollar-conversion)
+
 Original brief and requirements:
 
 >Write a function (dollars) that accepts a `String` and returns a `String`. It
